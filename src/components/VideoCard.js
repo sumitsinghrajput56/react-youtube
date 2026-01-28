@@ -5,7 +5,6 @@ const VideoCard = ({info}) => {
     const {snippet, statistics} = info;
     const {channelTitle, title, thumbnails} = snippet;
 
-    console.log("info",info);
   return (
     <div className='p-2 m-2 w-52 shadow-lg'>
         <img className='rounded-lg' alt='thumbnails' src={thumbnails.medium.url} />
@@ -18,6 +17,14 @@ const VideoCard = ({info}) => {
         
     </div>
   )
+}
+
+export const AdVideoCard = ({info}) => {
+    return(
+        <div className='p-1 m-1 border border-red-900'>
+            <VideoCard info={info} />
+        </div>
+    )
 }
 
 export default VideoCard
