@@ -18,7 +18,7 @@ const Demo2 = () => {
       console.log("set Interval is calling");
     }, 2000);
 
-    return () => clearInterval(i.current);
+    // return () => clearInterval(i.current);   
   }, []);
 
   return (
