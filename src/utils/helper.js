@@ -193,3 +193,42 @@ export function makeRandomMessage(length) {
   }
   return result;
 }
+
+// Source - https://stackoverflow.com/q/29091452
+// Posted by Anthony
+// Retrieved 2026-01-31, License - CC BY-SA 3.0
+
+// Source - https://stackoverflow.com/a/34616821
+// Posted by ppseprus
+// Retrieved 2026-01-31, License - CC BY-SA 3.0
+
+// Source - https://stackoverflow.com/a/66713087
+// Posted by Saju
+// Retrieved 2026-01-31, License - CC BY-SA 4.0
+
+export const findPrime = num => {
+let i, primes = [2, 3], n = 5
+const isPrime = n => {
+    let i = 1, p = primes[i],
+        limit = Math.ceil(Math.sqrt(n))
+    while (p <= limit) {
+        if (n % p === 0) {
+            return false
+        }
+        i += 1
+        p = primes[i]
+    }
+    return true
+}
+for (i = 2; i <= num; i += 1) {
+    while (!isPrime(n)) {
+        n += 2
+    }
+    primes.push(n)
+    n += 2
+};
+return primes[num - 1]
+};
+
+
+
