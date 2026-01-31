@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { findPrime } from '../utils/helper';
 
 const Demo = () => {
   const [text, setText] = useState(0);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   
-
+  // const prime = findPrime(text);
+  
   // Heavy operation 
-
-  const prime = () => {
-    console.log("calculate prime nmber of",text);
-    return findPrime(text);
-  }
+  // memorized 
+  const prime = useMemo( () => findPrime(text), [text]);
 
   return (
      <div
@@ -35,7 +33,7 @@ const Demo = () => {
           onChange={(e) => setText(e.target.value)}
           />
         <div>
-          <h1 className='mt-4 font-bold'>nth Prime: {prime()}</h1>
+          <h1 className='mt-4 font-bold'>nth Prime: {prime}</h1>
         </div>
     </div>
   )
